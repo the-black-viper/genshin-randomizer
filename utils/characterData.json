@@ -1,5 +1,14 @@
 [
   {
+    "id": 0,
+    "fullName": "default",
+    "imgName": "default",
+    "rarity": 5,
+    "elements": ["neutral"],
+    "selected": false,
+    "collab": false
+  },
+  {
     "id": 1,
     "fullName": "Arataki Itto",
     "imgName": "arataki_itto",
@@ -63,7 +72,7 @@
     "collab": false
   },
   {
-    "id": 55,
+    "id": 8,
     "fullName": "Candace",
     "imgName": "candace",
     "rarity": 4,
@@ -72,7 +81,7 @@
     "collab": false
   },
   {
-    "id": 8,
+    "id": 9,
     "fullName": "Chongyun",
     "imgName": "chongyun",
     "rarity": 4,
@@ -81,7 +90,7 @@
     "collab": false
   },
   {
-    "id": 52,
+    "id": 10,
     "fullName": "Collei",
     "imgName": "collei",
     "rarity": 4,
@@ -90,7 +99,7 @@
     "collab": false
   },
   {
-    "id": 56,
+    "id": 11,
     "fullName": "Cyno",
     "imgName": "cyno",
     "rarity": 5,
@@ -99,7 +108,7 @@
     "collab": false
   },
   {
-    "id": 9,
+    "id": 12,
     "fullName": "Diluc",
     "imgName": "diluc",
     "rarity": 5,
@@ -108,7 +117,7 @@
     "collab": false
   },
   {
-    "id": 10,
+    "id": 13,
     "fullName": "Diona",
     "imgName": "diona",
     "rarity": 4,
@@ -117,7 +126,7 @@
     "collab": false
   },
   {
-    "id": 54,
+    "id": 14,
     "fullName": "Dori",
     "imgName": "dori",
     "rarity": 4,
@@ -126,7 +135,7 @@
     "collab": false
   },
   {
-    "id": 11,
+    "id": 15,
     "fullName": "Eula",
     "imgName": "eula",
     "rarity": 5,
@@ -135,7 +144,7 @@
     "collab": false
   },
   {
-    "id": 61,
+    "id": 16,
     "fullName": "Faruzan",
     "imgName": "faruzan",
     "rarity": 4,
@@ -144,7 +153,7 @@
     "collab": false
   },
   {
-    "id": 12,
+    "id": 17,
     "fullName": "Fischl",
     "imgName": "fischl",
     "rarity": 4,
@@ -153,7 +162,7 @@
     "collab": false
   },
   {
-    "id": 13,
+    "id": 18,
     "fullName": "Ganyu",
     "imgName": "ganyu",
     "rarity": 5,
@@ -162,7 +171,7 @@
     "collab": false
   },
   {
-    "id": 14,
+    "id": 19,
     "fullName": "Gorou",
     "imgName": "gorou",
     "rarity": 4,
@@ -171,7 +180,7 @@
     "collab": false
   },
   {
-    "id": 15,
+    "id": 20,
     "fullName": "Hu Tao",
     "imgName": "hu_tao",
     "rarity": 5,
@@ -180,7 +189,7 @@
     "collab": false
   },
   {
-    "id": 16,
+    "id": 21,
     "fullName": "Jean",
     "imgName": "jean",
     "rarity": 5,
@@ -189,7 +198,7 @@
     "collab": false
   },
   {
-    "id": 17,
+    "id": 22,
     "fullName": "Kaedehara Kazuha",
     "imgName": "kaedehara_kazuha",
     "rarity": 5,
@@ -198,7 +207,7 @@
     "collab": false
   },
   {
-    "id": 18,
+    "id": 23,
     "fullName": "Kaeya",
     "imgName": "kaeya",
     "rarity": 4,
@@ -207,7 +216,7 @@
     "collab": false
   },
   {
-    "id": 19,
+    "id": 24,
     "fullName": "Kamisato Ayaka",
     "imgName": "kamisato_ayaka",
     "rarity": 5,
@@ -216,7 +225,7 @@
     "collab": false
   },
   {
-    "id": 20,
+    "id": 25,
     "fullName": "Kamisato Ayato",
     "imgName": "kamisato_ayato",
     "rarity": 5,
@@ -225,7 +234,7 @@
     "collab": false
   },
   {
-    "id": 21,
+    "id": 26,
     "fullName": "Keqing",
     "imgName": "keqing",
     "rarity": 5,
@@ -234,7 +243,7 @@
     "collab": false
   },
   {
-    "id": 22,
+    "id": 27,
     "fullName": "Klee",
     "imgName": "klee",
     "rarity": 5,
@@ -243,7 +252,7 @@
     "collab": false
   },
   {
-    "id": 23,
+    "id": 28,
     "fullName": "Kujou Sara",
     "imgName": "kujou_sara",
     "rarity": 4,
@@ -252,7 +261,7 @@
     "collab": false
   },
   {
-    "id": 24,
+    "id": 29,
     "fullName": "Kuki Shinobu",
     "imgName": "kuki_shinobu",
     "rarity": 4,
@@ -261,7 +270,7 @@
     "collab": false
   },
   {
-    "id": 60,
+    "id": 30,
     "fullName": "Layla",
     "imgName": "layla",
     "rarity": 4,
@@ -270,7 +279,7 @@
     "collab": false
   },
   {
-    "id": 25,
+    "id": 31,
     "fullName": "Lisa",
     "imgName": "lisa",
     "rarity": 4,
@@ -279,7 +288,7 @@
     "collab": false
   },
   {
-    "id": 26,
+    "id": 32,
     "fullName": "Mona",
     "imgName": "mona",
     "rarity": 5,
@@ -288,7 +297,7 @@
     "collab": false
   },
   {
-    "id": 59,
+    "id": 33,
     "fullName": "Nahida",
     "imgName": "nahida",
     "rarity": 5,
@@ -297,7 +306,7 @@
     "collab": false
   },
   {
-    "id": 27,
+    "id": 34,
     "fullName": "Ningguang",
     "imgName": "ningguang",
     "rarity": 4,
@@ -306,7 +315,7 @@
     "collab": false
   },
   {
-    "id": 57,
+    "id": 35,
     "fullName": "Nilou",
     "imgName": "nilou",
     "rarity": 5,
@@ -315,7 +324,7 @@
     "collab": false
   },
   {
-    "id": 28,
+    "id": 36,
     "fullName": "Noelle",
     "imgName": "noelle",
     "rarity": 4,
@@ -324,7 +333,7 @@
     "collab": false
   },
   {
-    "id": 29,
+    "id": 37,
     "fullName": "Qiqi",
     "imgName": "qiqi",
     "rarity": 5,
@@ -333,7 +342,7 @@
     "collab": false
   },
   {
-    "id": 30,
+    "id": 38,
     "fullName": "Raiden Shogun",
     "imgName": "raiden_shogun",
     "rarity": 5,
@@ -342,7 +351,7 @@
     "collab": false
   },
   {
-    "id": 31,
+    "id": 39,
     "fullName": "Razor",
     "imgName": "razor",
     "rarity": 4,
@@ -351,7 +360,7 @@
     "collab": false
   },
   {
-    "id": 32,
+    "id": 40,
     "fullName": "Rosaria",
     "imgName": "rosaria",
     "rarity": 4,
@@ -360,7 +369,7 @@
     "collab": false
   },
   {
-    "id": 33,
+    "id": 41,
     "fullName": "Sangonomiya Kokomi",
     "imgName": "sangonomiya_kokomi",
     "rarity": 5,
@@ -369,7 +378,7 @@
     "collab": false
   },
   {
-    "id": 34,
+    "id": 42,
     "fullName": "Sayu",
     "imgName": "sayu",
     "rarity": 4,
@@ -378,7 +387,7 @@
     "collab": false
   },
   {
-    "id": 35,
+    "id": 43,
     "fullName": "Shenhe",
     "imgName": "shenhe",
     "rarity": 5,
@@ -387,7 +396,7 @@
     "collab": false
   },
   {
-    "id": 51,
+    "id": 44,
     "fullName": "Shikanoin Heizou",
     "imgName": "shikanoin_Heizou",
     "rarity": 4,
@@ -396,7 +405,7 @@
     "collab": false
   },
   {
-    "id": 36,
+    "id": 45,
     "fullName": "Sucrose",
     "imgName": "sucrose",
     "rarity": 4,
@@ -405,7 +414,7 @@
     "collab": false
   },
   {
-    "id": 37,
+    "id": 46,
     "fullName": "Tartaglia",
     "imgName": "tartaglia",
     "rarity": 5,
@@ -414,7 +423,7 @@
     "collab": false
   },
   {
-    "id": 38,
+    "id": 47,
     "fullName": "Thoma",
     "imgName": "thoma",
     "rarity": 4,
@@ -423,7 +432,7 @@
     "collab": false
   },
   {
-    "id": 53,
+    "id": 48,
     "fullName": "Tighnari",
     "imgName": "tighnari",
     "rarity": 5,
@@ -432,43 +441,16 @@
     "collab": false
   },
   {
-    "id": 999,
+    "id": 49,
     "fullName": "Traveler",
-    "imgName": "travelerAnemo",
-    "rarity": 5,
-    "elements": ["anemo"],
-    "selected": true,
-    "collab": false
-  },
-  {
-    "id": 998,
-    "fullName": "Traveler",
-    "imgName": "travelerGeo",
-    "rarity": 5,
-    "elements": ["geo"],
-    "selected": true,
-    "collab": false
-  },
-  {
-    "id": 997,
-    "fullName": "Traveler",
-    "imgName": "travelerElectro",
+    "imgName": "traveler_anemo",
     "rarity": 5,
     "elements": ["electro"],
     "selected": true,
     "collab": false
   },
   {
-    "id": 996,
-    "fullName": "Traveler",
-    "imgName": "travelerDendro",
-    "rarity": 5,
-    "elements": ["dendro"],
-    "selected": true,
-    "collab": false
-  },
-  {
-    "id": 40,
+    "id": 50,
     "fullName": "Venti",
     "imgName": "venti",
     "rarity": 5,
@@ -477,7 +459,7 @@
     "collab": false
   },
   {
-    "id": 62,
+    "id": 51,
     "fullName": "Wanderer",
     "imgName": "wanderer",
     "rarity": 5,
@@ -486,7 +468,7 @@
     "collab": false
   },
   {
-    "id": 41,
+    "id": 52,
     "fullName": "Xiangling",
     "imgName": "xiangling",
     "rarity": 4,
@@ -495,7 +477,7 @@
     "collab": false
   },
   {
-    "id": 42,
+    "id": 53,
     "fullName": "Xiao",
     "imgName": "xiao",
     "rarity": 5,
@@ -504,7 +486,7 @@
     "collab": false
   },
   {
-    "id": 43,
+    "id": 54,
     "fullName": "Xingqiu",
     "imgName": "xingqiu",
     "rarity": 4,
@@ -513,7 +495,7 @@
     "collab": false
   },
   {
-    "id": 44,
+    "id": 55,
     "fullName": "Xinyan",
     "imgName": "xinyan",
     "rarity": 4,
@@ -522,7 +504,7 @@
     "collab": false
   },
   {
-    "id": 45,
+    "id": 56,
     "fullName": "Yae Miko",
     "imgName": "yae_miko",
     "rarity": 5,
@@ -531,7 +513,7 @@
     "collab": false
   },
   {
-    "id": 46,
+    "id": 57,
     "fullName": "Yanfei",
     "imgName": "yanfei",
     "rarity": 4,
@@ -540,7 +522,7 @@
     "collab": false
   },
   {
-    "id": 47,
+    "id": 58,
     "fullName": "Yelan",
     "imgName": "yelan",
     "rarity": 5,
@@ -549,7 +531,7 @@
     "collab": false
   },
   {
-    "id": 48,
+    "id": 59,
     "fullName": "Yoimiya",
     "imgName": "yoimiya",
     "rarity": 5,
@@ -558,7 +540,7 @@
     "collab": false
   },
   {
-    "id": 49,
+    "id": 60,
     "fullName": "Yun Jin",
     "imgName": "yun_jin",
     "rarity": 4,
@@ -567,7 +549,7 @@
     "collab": false
   },
   {
-    "id": 50,
+    "id": 61,
     "fullName": "Zhongli",
     "imgName": "zhongli",
     "rarity": 5,
