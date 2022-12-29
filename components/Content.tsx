@@ -59,7 +59,7 @@ function Content() {
       <div className="flex justify-center gap-4">
         <button
           onClick={handleGenerateTeam}
-          className="py-1 px-3 bg-red-900 border-2 border-neutral-400 rounded-md mt-5 mb-4 font-bold shadow-md hover:bg-red-800"
+          className="py-1 px-3 bg-slate-50 text-black border-2 border-neutral-400 rounded-md mt-5 mb-4 font-extrabold shadow-md hover:bg-slate-200 focus-within:text-neutral-700"
           aria-label="generate team"
         >
           {"Generate Team"}
