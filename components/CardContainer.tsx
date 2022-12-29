@@ -1,8 +1,9 @@
 "use client";
+import { getValidCharacters } from "@utils/helpers";
 import React from "react";
-import CharacterCard from "./Card";
-import characterData from "utils/characterData.json";
+import CharacterCard, { ICharacterData } from "./Card";
 
+const characterData = getValidCharacters();
 function getCharacter(id: number) {
   const match = characterData.find((char) => {
     return char.id === id;

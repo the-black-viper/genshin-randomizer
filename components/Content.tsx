@@ -60,6 +60,7 @@ function Content() {
         <button
           onClick={handleGenerateTeam}
           className="py-1 px-3 bg-red-900 border-2 border-neutral-400 rounded-md mt-5 mb-4 font-bold shadow-md hover:bg-red-800"
+          aria-label="generate team"
         >
           {"Generate Team"}
         </button>

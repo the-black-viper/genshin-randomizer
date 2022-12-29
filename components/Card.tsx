@@ -5,12 +5,21 @@ import defaultCardBack from "../public/img/etc/default_card.png";
 import "@styles/globals.css";
 import { CharacterContext } from "context/CharacterContext";
 
+export type ICharacterElements =
+  | "neutral"
+  | "paimon"
+  | "anemo"
+  | "cryo"
+  | "dendro"
+  | "pyro"
+  | "geo"
+  | "electro";
 export type ICharacterData = {
   id: number;
   fullName: string;
   imgName: string;
   rarity: number;
-  elements: string[];
+  elements: ICharacterElements;
   selected: boolean;
   collab: boolean;
 };
@@ -25,11 +34,13 @@ const baseStyle =
 const cardBaseStyle =
   "flex justify-center items-center h-full w-full  rounded-xl shadow-lg absolute backface-hidden";
 
-const cardBackStyle =
-  "flex flex-col justify-start items-center h-full w-full rounded-xl shadow-lg absolute backface-hidden border-5 border-stone-900 rotate-y-180";
+const cardFrontStyle =
+  "flex relative flex-col justify-start items-center h-full w-full rounded-xl shadow-lg absolute backface-hidden   rotate-y-180";
 
 const ssrGradient = " bg-gradient-to-br from-amber-800 to-yellow-600";
 const srGradient = " bg-gradient-to-br from-purple-900 to-purple-400";
+const labelStyle =
+  "flex items-center text-sm justify-center text-center pt-2 pb-1 w-full h-full truncate break-words whitespace-normal leading-none font-bold rounded-b-xl";
 
 const CharacterCard = ({
   isCardFlipped,
@@ -63,24 +74,38 @@ const CharacterCard = ({
         className={isCardFlipped ? baseStyle + " rotate-y-180" : baseStyle}
         onClick={() => handleClick(characterData)}
       >
-        <div id="front" className={cardBaseStyle}>
+        <div id="back" className={cardBaseStyle}>
           <Image
             src={defaultCardBack}
             alt="default card back"
             priority={true}
             width={120}
             height={160}
-            style={{ borderRadius: "10px", border: "5px solid rgb(28,25,23)" }}
+            style={{ borderRadius: "12px", border: "5px solid #a09073" }}
           />
         </div>
         <div
-          id="back"
+          id="front"
           className={
             characterData.rarity === 4
-              ? cardBackStyle + srGradient
-              : cardBackStyle + ssrGradient
+              ? cardFrontStyle + srGradient
+              : cardFrontStyle + ssrGradient
           }
         >
+          <div>
+            <Image
+              src={
+                characterData.fullName === "Traveler"
+                  ? `/img/elements/stardust.webp`
+                  : `/img/elements/${characterData.elements}.svg`
+              }
+              alt={characterData.imgName}
+              priority={true}
+              width={25}
+              height={20}
+              style={{ position: "absolute", top: "5px", left: "5px" }}
+            />
+          </div>
           <Image
             src={`/img/characters/${characterData.imgName}.webp`}
             alt={characterData.imgName}
@@ -88,7 +113,13 @@ const CharacterCard = ({
             width={256}
             height={256}
           />
-          <div className="bg-stone-900 flex items-center text-sm justify-center text-center pt-2 pb-1 w-full h-full truncate break-words whitespace-normal leading-none">
+          <div
+            className={
+              characterData.rarity === 4
+                ? labelStyle + " bg-violet-900"
+                : labelStyle + " bg-yellow-700"
+            }
+          >
             {characterData.fullName ? `${characterData.fullName}` : "Character"}
           </div>
         </div>

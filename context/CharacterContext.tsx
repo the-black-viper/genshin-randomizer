@@ -1,14 +1,12 @@
 "use client";
 import { ICharacterData } from "@components/Card";
-import characterData from "@utils/characterData.json";
+import { getValidCharacters } from "@utils/helpers";
 import React, {
   createContext,
   PropsWithChildren,
   useCallback,
   useReducer,
 } from "react";
-
-const validCharacters = characterData.slice(1);
 
 type InitialState = {
   characters: ICharacterData[];
@@ -42,6 +40,8 @@ export type Dispatcher = <
 ) => void;
 
 type ICharacterContext = readonly [InitialState, Dispatcher];
+
+const validCharacters = getValidCharacters();
 
 function characterReducer(state: InitialState, action: Actions) {
   switch (action.type) {
