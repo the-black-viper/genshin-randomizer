@@ -40,7 +40,7 @@ const cardFrontStyle =
 const ssrGradient = " bg-gradient-to-br from-amber-800 to-yellow-600";
 const srGradient = " bg-gradient-to-br from-purple-900 to-purple-400";
 const labelStyle =
-  "flex items-center text-sm justify-center text-center pt-2 pb-1 w-full h-full truncate break-words whitespace-normal leading-none font-bold rounded-b-xl";
+  "flex items-center text-sm justify-center text-center p-1 w-full h-full truncate break-words whitespace-normal leading-none font-bold rounded-b-xl";
 
 const CharacterCard = ({
   isCardFlipped,
