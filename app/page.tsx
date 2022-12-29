@@ -9,7 +9,7 @@ function HomePage() {
     <main className="bg-primary-bg-dark">
       <section className="w-screen md:h-screen flex flex-col items-center justify-center">
         <header>
-          <h1 className="text-3xl font-extrabold">Genshin Impact Randomizer</h1>
+          <h1 className="text-4xl font-extrabold">Genshin Impact Randomizer</h1>
         </header>
         <Content />
         <a
