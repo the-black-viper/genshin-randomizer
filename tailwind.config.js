@@ -66,6 +66,7 @@ module.exports = {
       colors: {
         "card-back-amber": "#a09073",
         "card-front-amber": "#bda037",
+        "primary-bg-dark": "#12021b",
       },
       fontFamily: {
         sans: ["var(--font-genshin)", ...fontFamily.sans],
