@@ -1,26 +1,29 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
-import { generateRandomInteger, randChoice } from "utils/helpers";
+import {
+  generateRandomInteger,
+  getValidCharacters,
+  randChoice,
+} from "utils/helpers";
 import characterData from "utils/characterData.json";
 import CardContainer from "./CardContainer";
 import SelectionWrapper from "./SelectionWrapper";
 import { CharacterContext } from "context/CharacterContext";
 const defaultFourTeamIds = [-1, -2, -3, -4, -5, -6, -7, -8];
 const totalChars = 8;
-const validCharacters = characterData.slice(1);
+const validCharacters = getValidCharacters();
 
 function generateTeam(teamLength: number = 4, excludedIds: number[]): number[] {
   if (excludedIds.length === validCharacters.length) return defaultFourTeamIds;
 
-  // Exclude index 0 (Default Character Object)
   const characterIds = validCharacters
-    .slice(1)
     .map((char) => char.id)
     .filter((id) => !excludedIds.includes(id));
+  // If not enough characters to generate both teams return default ids
+  if (characterIds.length < totalChars) return defaultFourTeamIds;
   const numSet: Set<number> = new Set();
   while (numSet.size !== teamLength) {
     const randomCharacterId = randChoice(characterIds);
-    console.log(randomCharacterId);
     numSet.add(randomCharacterId);
   }
 

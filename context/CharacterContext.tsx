@@ -17,6 +17,7 @@ export type ActionsMap = {
   setCharacters: number;
   excludeCharacter: number;
   includeCharacter: number;
+  setExcludedCharacters: number[];
   excludeAll: undefined;
   selectAll: undefined;
 };
@@ -77,6 +78,12 @@ function characterReducer(state: InitialState, action: Actions) {
       return {
         ...state,
         excludedCharacterIds: excludedCharacters,
+      };
+    }
+    case "setExcludedCharacters": {
+      return {
+        ...state,
+        excludedCharacterIds: action.payload,
       };
     }
     case "excludeAll": {

@@ -1,10 +1,12 @@
 "use client";
 import React, { useContext, useMemo, useState } from "react";
 import characterData from "@utils/characterData.json";
-import CharacterCard from "./Card";
+import CharacterCard, { ICharacterElements } from "./Card";
 import { CharacterContext } from "context/CharacterContext";
 import Image from "next/image";
 import { getValidCharacters } from "@utils/helpers";
+import Element from "./Element";
+import { elements } from "@utils/constants";
 
 const validCharacters = getValidCharacters();
 const baseButton =
@@ -21,33 +23,30 @@ function filterCharactersList(query: string) {
   });
   return filteredCharacters;
 }
-function SelectionWrapper() {
+
+const validElements = elements.filter(
+  (element) => element !== "neutral" && element !== "paimon"
+);
+function CharacterSelection() {
   const [{ excludedCharacterIds }, dispatch] = useContext(CharacterContext);
   const [query, setQuery] = useState("");
 
   const handleClick = () => {
-    if (excludedCharacterIds.length === validCharacters.length)
-      dispatch("selectAll");
+    if (excludedCharacterIds.length > 0) dispatch("selectAll");
     else dispatch("excludeAll");
   };
   const visibleCharacters = useMemo(() => filterCharactersList(query), [query]);
+
   return (
     <section
       id="character-selection"
       className="flex flex-col items-center justify-center h-auto w-screen"
     >
-      {/* <div>
-        <div id="anemo-logo">
-          <Image
-            src={"/img/elements/anemo.svg"}
-            alt="anemo_logo"
-            width={40}
-            height={40}
-          />
-        </div>
-        <div id="hydro-logo"></div>
-        <div id="pyro-logo"></div>
-      </div> */}
+      <div className="flex">
+        {validElements.map((element) => {
+          return <Element element={element} key={element} />;
+        })}
+      </div>
       <div className="flex flex-col md:flex-row gap-4 my-4 items-center justify-center">
         <button
           className={
@@ -57,9 +56,7 @@ function SelectionWrapper() {
           }
           onClick={handleClick}
         >
-          {excludedCharacterIds.length === validCharacters.length
-            ? "Select All"
-            : "Deselect All"}
+          {excludedCharacterIds.length > 0 ? "Select All" : "Deselect All"}
         </button>
         <div className="flex gap-1 h-[35px] rounded-md border-2 border-neutral-400 bg-gray-900 py-1 px-2 drop-shadow-lg focus-within:shadow focus-within:shadow-slate-200 focus-within:drop-shadow-none">
           <div className="mr-2">
@@ -97,4 +94,4 @@ function SelectionWrapper() {
   );
 }
 
-export default SelectionWrapper;
+export default CharacterSelection;

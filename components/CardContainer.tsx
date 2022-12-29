@@ -33,7 +33,7 @@ function CardContainer({
       <h5 className="text-center font-semibold text-xl my-3">{`${
         isMultiTeam ? "Team " + isMultiTeam.teamIndex : "Random Team"
       }`}</h5>
-      <div className="grid gap-3.5 sm:grid-cols-2 md:grid-cols-4">
+      <div className="grid gap-3.5 justify-center sm:grid-cols-2 md:grid-cols-4">
         {teamIds.map((id: number, index: number) => {
           return (
             <CharacterCard

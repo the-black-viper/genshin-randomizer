@@ -4,16 +4,9 @@ import Image from "next/image";
 import defaultCardBack from "../public/img/etc/default_card.png";
 import "@styles/globals.css";
 import { CharacterContext } from "context/CharacterContext";
+import { elements } from "@utils/constants";
 
-export type ICharacterElements =
-  | "neutral"
-  | "paimon"
-  | "anemo"
-  | "cryo"
-  | "dendro"
-  | "pyro"
-  | "geo"
-  | "electro";
+export type ICharacterElements = typeof elements[number];
 export type ICharacterData = {
   id: number;
   fullName: string;
@@ -51,11 +44,20 @@ const CharacterCard = ({
   const [clicked, setClicked] = useState(false);
 
   const handleClick = (char: ICharacterData) => {
-    if (!clicked) {
+    if (!clicked && excludedCharacterIds.includes(char.id)) {
+      dispatch("includeCharacter", char.id);
+      setClicked(true);
+    }
+    if (!clicked && !excludedCharacterIds.includes(char.id)) {
       dispatch("excludeCharacter", char.id);
       setClicked(true);
-    } else {
+    }
+    if (clicked && excludedCharacterIds.includes(char.id)) {
       dispatch("includeCharacter", char.id);
+      setClicked(false);
+    }
+    if (clicked && !excludedCharacterIds.includes(char.id)) {
+      dispatch("excludeCharacter", char.id);
       setClicked(false);
     }
   };
