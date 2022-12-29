@@ -103,7 +103,12 @@ const CharacterCard = ({
               priority={true}
               width={25}
               height={20}
-              style={{ position: "absolute", top: "5px", left: "5px" }}
+              style={{
+                position: "absolute",
+                top: "5px",
+                left: "5px",
+                filter: "drop-shadow(0 1px 1px black)",
+              }}
             />
           </div>
           <Image
