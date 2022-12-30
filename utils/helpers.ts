@@ -1,5 +1,5 @@
 import { ICharacterData } from "@components/Card";
-import characterData from "@utils/characterData.json";
+import characterData from "@data/characterData.json";
 export function generateRandomInteger(min: number, max: number) {
   return Math.floor(min + Math.random() * (max - min + 1));
 }
