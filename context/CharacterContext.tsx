@@ -14,10 +14,9 @@ type InitialState = {
 };
 
 export type ActionsMap = {
-  setCharacters: number;
+  setExcludedCharacters: number[];
   excludeCharacter: number;
   includeCharacter: number;
-  setExcludedCharacters: number[];
   excludeAll: undefined;
   selectAll: undefined;
 };
@@ -46,21 +45,6 @@ const validCharacters = getValidCharacters();
 
 function characterReducer(state: InitialState, action: Actions) {
   switch (action.type) {
-    case "setCharacters": {
-      const charData = validCharacters.map((char) => {
-        if (char.id === action.payload) {
-          return {
-            ...char,
-            selected: true,
-          };
-        } else return char;
-      });
-
-      return {
-        ...state,
-        characters: charData,
-      };
-    }
     case "excludeCharacter": {
       const excludedCharacters = [
         ...state.excludedCharacterIds,
