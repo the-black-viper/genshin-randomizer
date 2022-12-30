@@ -1,14 +1,9 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
-import {
-  generateRandomInteger,
-  getValidCharacters,
-  randChoice,
-} from "utils/helpers";
-import characterData from "utils/characterData.json";
+import { getValidCharacters, randChoice } from "utils/helpers";
 import CardContainer from "./CardContainer";
-import SelectionWrapper from "./SelectionWrapper";
 import { CharacterContext } from "context/CharacterContext";
+import { ToastContext } from "context/ToastContext";
 const defaultFourTeamIds = [-1, -2, -3, -4, -5, -6, -7, -8];
 const totalChars = 8;
 const validCharacters = getValidCharacters();
@@ -20,7 +15,9 @@ function generateTeam(teamLength: number = 4, excludedIds: number[]): number[] {
     .map((char) => char.id)
     .filter((id) => !excludedIds.includes(id));
   // If not enough characters to generate both teams return default ids
-  if (characterIds.length < totalChars) return defaultFourTeamIds;
+  if (characterIds.length < totalChars) {
+    return defaultFourTeamIds;
+  }
   const numSet: Set<number> = new Set();
   while (numSet.size !== teamLength) {
     const randomCharacterId = randChoice(characterIds);
@@ -32,13 +29,17 @@ function generateTeam(teamLength: number = 4, excludedIds: number[]): number[] {
 
 function Content() {
   const [{ excludedCharacterIds }, _] = useContext(CharacterContext);
+  const [{ showToast }, dispatch] = useContext(ToastContext);
   const [teamIds, setTeamIds] = useState<number[]>(defaultFourTeamIds);
   const [isCardFlipped, setCardFlipped] = useState(false);
 
   const handleGenerateTeam = () => {
     if (!isCardFlipped) {
       const teamIds = generateTeam(totalChars, excludedCharacterIds);
-      if (teamIds.toString() === defaultFourTeamIds.toString()) return;
+      if (teamIds.toString() === defaultFourTeamIds.toString()) {
+        dispatch("showToast", true);
+        return;
+      }
       setTeamIds(teamIds);
       setCardFlipped(true);
     } else {
@@ -46,7 +47,10 @@ function Content() {
       // Add a delay for the animation to play
       setTimeout(() => {
         const teamIds = generateTeam(totalChars, excludedCharacterIds);
-        if (teamIds.toString() === defaultFourTeamIds.toString()) return;
+        if (teamIds.toString() === defaultFourTeamIds.toString()) {
+          dispatch("showToast", true);
+          return;
+        }
         setTeamIds(teamIds);
         setCardFlipped(true);
       }, 650);

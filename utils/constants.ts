@@ -9,3 +9,5 @@ export const elements = [
   "electro",
   "hydro",
 ] as const;
+
+export const toastInterval = 4000;

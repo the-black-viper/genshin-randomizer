@@ -71,6 +71,10 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-genshin)", ...fontFamily.sans],
       },
+      translate: {
+        "hide-toast": "-120%",
+        "show-toast": "5%",
+      },
     },
 
     borderWidth: {

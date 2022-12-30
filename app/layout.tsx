@@ -1,6 +1,7 @@
 import localFont from "@next/font/local";
 import { Karla } from "@next/font/google";
 import { CharacterProvider } from "context/CharacterContext";
+import { ToastProvider } from "context/ToastContext";
 
 const genshinFont = Karla({
   variable: "--font-genshin",
@@ -22,7 +23,9 @@ export default function RootLayout({
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
       </head>
       <body className="overflow-hidden">
-        <CharacterProvider>{children}</CharacterProvider>
+        <CharacterProvider>
+          <ToastProvider>{children}</ToastProvider>
+        </CharacterProvider>
       </body>
     </html>
   );
