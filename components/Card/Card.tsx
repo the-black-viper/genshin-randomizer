@@ -1,8 +1,8 @@
 "use client";
+import "@styles/globals.css";
 import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
-import defaultCardBack from "../public/img/etc/default_card.png";
-import "@styles/globals.css";
+import defaultCardBack from "../../public/img/etc/default_card.png";
 import { CharacterContext } from "context/CharacterContext";
 import { elements } from "@utils/constants";
 

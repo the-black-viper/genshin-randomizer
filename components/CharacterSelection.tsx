@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useMemo, useState } from "react";
 import characterData from "@data/characterData.json";
-import CharacterCard, { ICharacterElements } from "./Card";
+import CharacterCard, { ICharacterElements } from "./Card/Card";
 import { CharacterContext } from "context/CharacterContext";
 import Image from "next/image";
 import { getValidCharacters } from "@utils/helpers";

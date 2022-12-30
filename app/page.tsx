@@ -1,7 +1,7 @@
 import "@styles/globals.css";
 import React from "react";
 import Main from "@components/Main";
-import CharacterSection from "@components/SelectionWrapper";
+import CharacterSection from "@components/CharacterSelection";
 import Footer from "@components/Footer";
 import Toast from "@components/Toast";
 

@@ -75,6 +75,9 @@ module.exports = {
         "hide-toast": "-120%",
         "show-toast": "5%",
       },
+      boxShadow: {
+        "inner-white": "0 0 5px white",
+      },
     },
 
     borderWidth: {

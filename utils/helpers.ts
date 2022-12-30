@@ -1,5 +1,11 @@
-import { ICharacterData } from "@components/Card";
+import { ICharacterData } from "@components/Card/Card";
 import characterData from "@data/characterData.json";
+import {
+  defaultEightTeamIds,
+  defaultFourTeamIds,
+  defaultSingleId,
+  defaultTwoTeamIds,
+} from "./constants";
 export function generateRandomInteger(min: number, max: number) {
   return Math.floor(min + Math.random() * (max - min + 1));
 }
@@ -18,6 +24,12 @@ export function getValidCharacters(): ICharacterData[] {
   return validCharacters;
 }
 
+export function getDefaultTeamIds(totalChars: number): number[] {
+  if (totalChars === 4) return defaultFourTeamIds;
+  if (totalChars === 2) return defaultTwoTeamIds;
+  if (totalChars === 1) return defaultSingleId;
+  return defaultEightTeamIds;
+}
 // export function getExcludedIds() {
 //   const excludedIds = sessionStorage.getItem("excluded");
 //   return excludedIds;

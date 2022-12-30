@@ -1,5 +1,5 @@
 "use client";
-import { ICharacterData } from "@components/Card";
+import { ICharacterData } from "@components/Card/Card";
 import { getValidCharacters } from "@utils/helpers";
 import React, {
   createContext,
@@ -9,11 +9,13 @@ import React, {
 } from "react";
 
 type InitialState = {
+  numberOfCharacters: number;
   characters: ICharacterData[];
   excludedCharacterIds: number[];
 };
 
 export type ActionsMap = {
+  setNumberOfCharacters: number;
   setExcludedCharacters: number[];
   excludeCharacter: number;
   includeCharacter: number;
@@ -45,6 +47,12 @@ const validCharacters = getValidCharacters();
 
 function characterReducer(state: InitialState, action: Actions) {
   switch (action.type) {
+    case "setNumberOfCharacters": {
+      return {
+        ...state,
+        numberOfCharacters: action.payload,
+      };
+    }
     case "excludeCharacter": {
       const excludedCharacters = [
         ...state.excludedCharacterIds,
@@ -91,7 +99,11 @@ function characterReducer(state: InitialState, action: Actions) {
 }
 
 export const CharacterContext = createContext<ICharacterContext>([
-  { characters: validCharacters, excludedCharacterIds: [] },
+  {
+    characters: validCharacters,
+    excludedCharacterIds: [],
+    numberOfCharacters: 8,
+  },
   () => {},
 ]);
 
@@ -101,6 +113,7 @@ export const CharacterProvider: React.FC<PropsWithChildren<any>> = ({
   const [state, _dispatch] = useReducer(characterReducer, {
     characters: validCharacters,
     excludedCharacterIds: [],
+    numberOfCharacters: 8,
   });
 
   const dispatch: Dispatcher = useCallback((type, ...payload) => {

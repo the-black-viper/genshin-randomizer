@@ -1,22 +1,28 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
-import { getValidCharacters, randChoice } from "utils/helpers";
-import CardContainer from "./CardContainer";
+import {
+  getDefaultTeamIds,
+  getValidCharacters,
+  randChoice,
+} from "utils/helpers";
 import { CharacterContext } from "context/CharacterContext";
 import { ToastContext } from "context/ToastContext";
-const defaultFourTeamIds = [-1, -2, -3, -4, -5, -6, -7, -8];
-const totalChars = 8;
-const validCharacters = getValidCharacters();
+import { defaultEightTeamIds } from "@utils/constants";
+import ModeSelection from "./ModeSelection";
+import Button from "./Button";
+import GenerateTeamButton from "./TeamGenerator/GenerateTeamButton";
+import RandomTeam from "./TeamGenerator/RandomTeam";
 
-function generateTeam(teamLength: number = 4, excludedIds: number[]): number[] {
-  if (excludedIds.length === validCharacters.length) return defaultFourTeamIds;
+const validCharacters = getValidCharacters();
+function generateTeam(teamLength: number = 8, excludedIds: number[]): number[] {
+  if (excludedIds.length === validCharacters.length) return defaultEightTeamIds;
 
   const characterIds = validCharacters
     .map((char) => char.id)
     .filter((id) => !excludedIds.includes(id));
   // If not enough characters to generate both teams return default ids
-  if (characterIds.length < totalChars) {
-    return defaultFourTeamIds;
+  if (characterIds.length < teamLength) {
+    return defaultEightTeamIds;
   }
   const numSet: Set<number> = new Set();
   while (numSet.size !== teamLength) {
@@ -28,15 +34,17 @@ function generateTeam(teamLength: number = 4, excludedIds: number[]): number[] {
 }
 
 function Content() {
-  const [{ excludedCharacterIds }, _] = useContext(CharacterContext);
-  const [{ showToast }, dispatch] = useContext(ToastContext);
-  const [teamIds, setTeamIds] = useState<number[]>(defaultFourTeamIds);
+  const [{ excludedCharacterIds, numberOfCharacters }, charDispatch] =
+    useContext(CharacterContext);
+  const [toastState, dispatch] = useContext(ToastContext);
+  const [teamIds, setTeamIds] = useState<number[]>(defaultEightTeamIds);
   const [isCardFlipped, setCardFlipped] = useState(false);
 
   const handleGenerateTeam = () => {
+    const defaultTeamIds = getDefaultTeamIds(numberOfCharacters);
     if (!isCardFlipped) {
-      const teamIds = generateTeam(totalChars, excludedCharacterIds);
-      if (teamIds.toString() === defaultFourTeamIds.toString()) {
+      const teamIds = generateTeam(numberOfCharacters, excludedCharacterIds);
+      if (teamIds.toString() === defaultTeamIds.toString()) {
         dispatch("showToast", true);
         return;
       }
@@ -46,8 +54,8 @@ function Content() {
       setCardFlipped(false);
       // Add a delay for the animation to play
       setTimeout(() => {
-        const teamIds = generateTeam(totalChars, excludedCharacterIds);
-        if (teamIds.toString() === defaultFourTeamIds.toString()) {
+        const teamIds = generateTeam(numberOfCharacters, excludedCharacterIds);
+        if (teamIds.toString() === defaultTeamIds.toString()) {
           dispatch("showToast", true);
           return;
         }
@@ -57,35 +65,22 @@ function Content() {
     }
   };
 
+  const handleChangeMode = (numChars: 2 | 4 | 8) => {
+    charDispatch("setNumberOfCharacters", numChars);
+  };
   // Get team one and team two
   const individualTeamLength = Math.round(teamIds.length / 2);
   const teamOne = teamIds.slice(0, individualTeamLength);
   const teamTwo = teamIds.slice(individualTeamLength);
   return (
     <section>
-      <div className="flex justify-center gap-4">
-        <button
-          onClick={handleGenerateTeam}
-          className="py-1 px-3 bg-slate-50 text-black border-2 border-neutral-400 rounded-md mt-5 mb-4 font-extrabold shadow-md hover:bg-slate-200 focus-within:text-neutral-700"
-          aria-label="generate team"
-        >
-          {"Generate Team"}
-        </button>
-      </div>
-      <div className="flex gap-8 flex-col lg:flex-row">
-        <CardContainer
-          isCardFlipped={isCardFlipped}
-          teamIds={teamOne}
-          isMultiTeam={{ isMulti: true, teamIndex: 1 }}
-          key={"team-one"}
-        />
-        <CardContainer
-          isCardFlipped={isCardFlipped}
-          teamIds={teamTwo}
-          isMultiTeam={{ isMulti: true, teamIndex: 2 }}
-          key={"team-two"}
-        />
-      </div>
+      <ModeSelection handleChangeMode={handleChangeMode} />
+      <GenerateTeamButton handleGenerateTeam={handleGenerateTeam} />
+      <RandomTeam
+        isCardFlipped={isCardFlipped}
+        teamOne={teamOne}
+        teamTwo={teamTwo}
+      />
     </section>
   );
 }

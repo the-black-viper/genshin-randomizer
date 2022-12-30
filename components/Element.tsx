@@ -3,7 +3,7 @@ import { getValidCharacters } from "@utils/helpers";
 import { CharacterContext } from "context/CharacterContext";
 import Image from "next/image";
 import React, { useContext, useState } from "react";
-import type { ICharacterElements } from "./Card";
+import type { ICharacterElements } from "./Card/Card";
 
 const validCharacters = getValidCharacters();
 
