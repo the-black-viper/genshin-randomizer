@@ -2,7 +2,7 @@ This project was inspired by [Daniel Aws Randomizer](https://github.com/daniel-a
 
 # Genshin Impact Randomizer
 
-![Randomizer](https://github.com/the-black-viper/genshin-randomizer/assets/randomizer_default.png)
+![Randomizer](https://github.com/the-black-viper/genshin-randomizer/blob/main/assets/randomizer_default.png)
 
 This was mainly developed as a challenge for players doing spiral abyss but also can be used for other purposes
 
@@ -14,6 +14,6 @@ This was mainly developed as a challenge for players doing spiral abyss but also
 
 ### Character Selection
 
-![Character Selection](https://github.com/the-black-viper/genshin-randomizer/assets/randomizer_selection.png)
+![Character Selection](https://github.com/the-black-viper/genshin-randomizer/blob/main/assets/randomizer_selection.png)
 
 By default the randomized characters will be chosen from the full roster currently available (Currently updated as of 3.3). However, users can disable certain elements or individual characters from the pool of characters.
