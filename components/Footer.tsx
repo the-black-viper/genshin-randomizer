@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="flex flex-col items-center p-5">
+    <footer className="flex flex-col items-center p-5 w-full">
       <div className="flex flex-col items-center text-center">
         <p>Genshin Randomizer is not affiliated with HoYoverse.</p>
         <p>
