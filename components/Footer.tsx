@@ -4,7 +4,7 @@ import React from "react";
 function Footer() {
   return (
     <footer className="flex flex-col items-center p-5">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center text-center">
         <p>Genshin Randomizer is not affiliated with HoYoverse.</p>
         <p>
           Genshin Impact, game content and materials are trademarks and
