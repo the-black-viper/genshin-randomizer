@@ -556,5 +556,23 @@
     "elements": "geo",
     "selected": false,
     "collab": false
+  },
+  {
+    "id": 62,
+    "fullName": "Al Haitham",
+    "imgName": "alhaitham",
+    "rarity": 5,
+    "elements": "dendro",
+    "selected": false,
+    "collab": false
+  },
+  {
+    "id": 63,
+    "fullName": "Yao Yao",
+    "imgName": "yaoyao",
+    "rarity": 5,
+    "elements": "dendro",
+    "selected": false,
+    "collab": false
   }
 ]

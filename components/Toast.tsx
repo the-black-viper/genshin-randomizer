@@ -38,9 +38,7 @@ function Toast() {
         height={30}
         // style={{ filter: "invert(100%)" }}
       />
-      <span className="text-black font-bold">
-        Insufficient selected characters
-      </span>
+      <span className="text-black font-bold">Insufficient character pool</span>
       <button className="absolute top-1 right-1" onClick={handleClose}>
         <Image
           src={"/img/icons/close_xxs.svg"}
