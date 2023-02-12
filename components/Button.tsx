@@ -17,7 +17,7 @@ export function Button(props: ButtonProps) {
                 isClicked ? "shadow shadow-neutral-200" : ""
               }`
             : `bg-gray-900 hover:bg-gray-800 text-white ${
-                isClicked ? "bg-gray-800 shadow-inner-white" : ""
+                isClicked ? "bg-gray-800 shadow-outer-white" : ""
               }`
         } py-1 px-3 border-2 border-neutral-400 rounded-md font-extrabold shadow-md h-[35px]`}
         {...rest}

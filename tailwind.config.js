@@ -77,6 +77,7 @@ module.exports = {
       },
       boxShadow: {
         "inner-white": "0 0 5px white",
+        "outer-white": "0 0 5px #ffffff",
       },
     },
 
