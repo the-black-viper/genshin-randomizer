@@ -117,6 +117,15 @@
     "collab": false
   },
   {
+    "id": 65,
+    "fullName": "Dehya",
+    "imgName": "dehya",
+    "rarity": 5,
+    "elements": "pyro",
+    "selected": false,
+    "collab": false
+  },
+  {
     "id": 12,
     "fullName": "Diluc",
     "imgName": "diluc",
